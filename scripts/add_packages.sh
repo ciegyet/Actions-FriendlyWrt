@@ -31,8 +31,15 @@ function init_theme() {
     fi
 }
 EOL
-sed -i -e '/boardname=/r /tmp/appendtext.txt' friendlywrt/target/linux/rockchip/armv8/base-files/root/setup.sh
 
+# {{ Add passwall
+(cd friendlywrt/package && {
+    git clone https://github.com/xiaorouji/openwrt-passwall-packages.git --depth 1 -b main
+    git clone https://github.com/xiaorouji/openwrt-passwall.git --depth 1 -b main
+})
+echo "CONFIG_PACKAGE_luci-app-passwall=y" >> configs/rockchip/01-nanopi
+
+sed -i -e '/boardname=/r /tmp/appendtext.txt' friendlywrt/target/linux/rockchip/armv8/base-files/root/setup.sh
 #修改hostname
 sed -i -e 's/HOSTNAME="FriendlyWrt"/HOSTNAME="Gwrt"/g' friendlywrt/target/linux/rockchip/armv8/base-files/root/setup.sh
 
