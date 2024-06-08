@@ -24,7 +24,7 @@ jobs:
       release_tag: ${{ steps.release_tag.outputs.release_tag }}
       upload_url: ${{ steps.release.outputs.upload_url }}
 
-  build_friendlywrt:
+  Build_Friendlywrt:
     needs: prepare_release
     runs-on: ubuntu-20.04
     if: github.event.repository.owner.id == github.event.sender.id
@@ -134,7 +134,7 @@ jobs:
         overwrite: true
 
   build_img:
-    needs: [prepare_release,build_friendlywrt]
+    needs: [prepare_release,Build_Friendlywrt]
     runs-on: ubuntu-20.04
     if: github.event.repository.owner.id == github.event.sender.id
 
