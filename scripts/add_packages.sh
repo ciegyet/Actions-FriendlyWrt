@@ -36,24 +36,7 @@ sed -i -e '/boardname=/r /tmp/appendtext.txt' friendlywrt/target/linux/rockchip/
 #修改hostname
 sed -i -e 's/HOSTNAME="FriendlyWrt"/HOSTNAME="Gwrt"/g' friendlywrt/target/linux/rockchip/armv8/base-files/root/setup.sh
 
-#移除aria2
-sed -i '/CONFIG_PACKAGE_luci-app-aria2=y/d' configs/rockchip/01-nanopi
-sed -i '/CONFIG_PACKAGE_aria2=y/d' configs/rockchip/01-nanopi
 
-#移除adblock
-sed -i '/CONFIG_PACKAGE_luci-app-adblock=y/d' configs/rockchip/01-nanopi
-
-#移除hd-idle
-sed -i '/CONFIG_PACKAGE_hd-idle=y/d' configs/rockchip/01-nanopi
-sed -i '/CONFIG_PACKAGE_luci-app-hd-idle=y/d' configs/rockchip/01-nanopi
-
-#移除minidlna
-sed -i '/CONFIG_PACKAGE_luci-app-minidlna=y/d' configs/rockchip/01-nanopi
-sed -i '/CONFIG_PACKAGE_minidlna=y/d' configs/rockchip/01-nanopi
-
-#移除watchcat
-sed -i '/CONFIG_PACKAGE_watchcat=y/d' configs/rockchip/01-nanopi
-sed -i '/CONFIG_PACKAGE_luci-app-watchcat=y/d' configs/rockchip/01-nanopi
 
 
 # }}
