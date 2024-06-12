@@ -33,10 +33,11 @@ function init_theme() {
 EOL
 
 # {{ Add passwall
-# (cd friendlywrt/package && {
-#     git clone https://github.com/xiaorouji/openwrt-passwall-packages.git --depth 1 -b main
-#     git clone https://github.com/xiaorouji/openwrt-passwall.git --depth 1 -b main
-# })
+(cd friendlywrt && {
+echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
+echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >> "feeds.conf.default"
+})
+
 
 
 # echo "-------------------CONFIG_PACKAGE_luci-app-passwall=y"
