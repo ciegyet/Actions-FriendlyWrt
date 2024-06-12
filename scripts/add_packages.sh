@@ -38,7 +38,31 @@ echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-pa
 echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >> "feeds.conf.default"
 })
 
+echo "CONFIG_FEED_passwall_packages=y" >> configs/rockchip/01-nanopi
+echo "CONFIG_FEED_passwall=y" >> configs/rockchip/01-nanopi
 
+echo "CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y" >> configs/rockchip/01-nanopi
+echo "CONFIG_PACKAGE_luci-app-passwall=y" >> configs/rockchip/01-nanopi
+
+echo "# CONFIG_PACKAGE_luci-app-passwall_Iptables_Transparent_Proxy is not set" >> configs/rockchip/01-nanopi
+echo "CONFIG_PACKAGE_luci-app-passwall_Nftables_Transparent_Proxy=y" >> configs/rockchip/01-nanopi
+echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy=y" >> configs/rockchip/01-nanopi
+echo "# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria is not set" >> configs/rockchip/01-nanopi
+echo "# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_NaiveProxy is not set" >> configs/rockchip/01-nanopi
+echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Client=y" >> configs/rockchip/01-nanopi
+echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Server=y" >> configs/rockchip/01-nanopi
+echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Client=y" >> configs/rockchip/01-nanopi
+echo "# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Server is not set" >> configs/rockchip/01-nanopi
+echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Client=y" >> configs/rockchip/01-nanopi
+echo "# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Server is not set" >> configs/rockchip/01-nanopi
+echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs=y" >> configs/rockchip/01-nanopi
+echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_SingBox=y" >> configs/rockchip/01-nanopi
+echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_Plus=y" >> configs/rockchip/01-nanopi
+echo "# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_tuic_client is not set" >> configs/rockchip/01-nanopi
+echo "# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Geodata is not set" >> configs/rockchip/01-nanopi
+echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin=y" >> configs/rockchip/01-nanopi
+echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y" >> configs/rockchip/01-nanopi
+echo "# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray_Plugin is not set" >> configs/rockchip/01-nanopi
 
 # echo "-------------------CONFIG_PACKAGE_luci-app-passwall=y"
 
